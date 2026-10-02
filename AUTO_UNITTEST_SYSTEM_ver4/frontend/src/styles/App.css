@@ -1,0 +1,520 @@
+/* =========================================
+   BỐ CỤC TỔNG THỂ (DASHBOARD LAYOUT)
+========================================= */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =========================================
+   SIDEBAR & THANH TIẾN TRÌNH (TÔNG TỐI)
+========================================= */
+.sidebar {
+  width: 260px;
+  background-color: #0f172a;
+  /* border-right: 1px solid #1e293b; */
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding-left: 8px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-indigo));
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.logo-text h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: -0.5px;
+}
+
+/* Thanh tiến trình (Stepper) */
+.stepper-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 10px;
+  position: relative;
+  padding-left: 5px;
+}
+
+.stepper-menu::before {
+  content: '';
+  position: absolute;
+  left: 23px;
+  top: 15px;
+  bottom: 25px;
+  width: 2px;
+  background-color: #334155;
+  z-index: 1;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+  color: #64748b;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.step-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #1e293b;
+  border: 2px solid #334155;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  padding-top: 2px;
+}
+
+.step-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #e2e8f0;
+}
+
+.step-desc {
+  font-size: 12px;
+}
+
+.step-item.active {
+  opacity: 1;
+}
+
+.step-item.active .step-circle {
+  border-color: var(--primary-blue);
+  background-color: var(--primary-blue);
+  color: white;
+  box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.25);
+}
+
+/* =========================================
+   NỘI DUNG CHÍNH (MAIN CONTENT & HEADER)
+========================================= */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.top-header {
+  height: 72px;
+  background: #0f172a;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.header-title h1 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-name {
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  color: #e11d48;
+  margin: 0;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+/* =========================================
+   KHU VỰC THAO TÁC (WORKSPACE & FORMS)
+========================================= */
+.workspace {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.input-form {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editor-wrapper {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: #fafafa;
+  overflow: hidden;
+}
+
+textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: #fafafa;
+  color: var(--text-main);
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  resize: vertical;
+  transition: all 0.2s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background-color: #ffffff;
+}
+
+/* =========================================
+   ĐIỀU KHIỂN & NÚT BẤM (CONTROLS & BUTTONS)
+========================================= */
+.coverage-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+input[type="range"] {
+  flex: 1;
+  accent-color: var(--primary-blue);
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--primary-indigo), var(--primary-blue));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px -5px rgba(59, 130, 246, 0.5);
+}
+
+.submit-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* =========================================
+   CHỐT CHẶN 1 (BẢNG DUYỆT KỊCH BẢN)
+========================================= */
+.scenarios-container {
+  margin-top: 40px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.scenarios-container h2 {
+  font-size: 18px;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.scenario-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scenario-table th, .scenario-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.scenario-table th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   PHÂN LOẠI BADGE 4 CHIẾN LƯỢC KIỂM THỬ
+========================================= */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* 1. Luồng chính (Happy Path) */
+.badge-green { 
+  background-color: #dcfce7; 
+  color: #166534; 
+  border: 1px solid #bbf7d0;
+}
+
+/* 2. Ngoại lệ (Negative/Exception) */
+.badge-red { 
+  background-color: #fee2e2; 
+  color: #991b1b; 
+  border: 1px solid #fecaca;
+}
+
+/* 3. Giá trị biên (Boundary Values) - Bổ sung mới */
+.badge-warning {
+  background-color: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+/* 4. Tổ hợp điều kiện chéo (Cross-Combinations) - Bổ sung mới */
+.badge-primary {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.btn-reject, .btn-approve {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-reject { background-color: #f1f5f9; color: #475569; }
+.btn-reject:hover { background-color: #e2e8f0; }
+
+.btn-approve { background-color: #10b981; color: white; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2); }
+.btn-approve:hover { background-color: #059669; }
+
+/* =========================================
+   TÙY CHỈNH Ô NHẬP SỐ (ẨN MŨI TÊN)
+========================================= */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type="number"] {
+  -moz-appearance: textfield; 
+}
+
+/* =========================================
+   NÚT THÊM KỊCH BẢN MỚI
+========================================= */
+.btn-add-scenario {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  color: #3b82f6;
+  border: 2px dashed #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-add-scenario:hover {
+  background-color: #e0f2fe;
+  border-color: #3b82f6;
+  color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* =========================================
+   CUSTOM MODAL XÁC NHẬN XÓA
+========================================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  animation: slideUp 0.2s ease-out;
+  border: 1px solid #e2e8f0;
+}
+
+.modal-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fee2e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 16px;
+}
+
+.modal-content h3 {
+  margin: 0 0 10px;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.modal-content p {
+  margin: 0 0 24px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-cancel {
+  padding: 12px 24px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #475569;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.btn-cancel:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.btn-confirm-delete {
+  padding: 12px 24px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.btn-confirm-delete:hover {
+  background: #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

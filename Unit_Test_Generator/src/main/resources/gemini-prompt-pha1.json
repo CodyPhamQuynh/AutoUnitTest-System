@@ -1,0 +1,32 @@
+{
+  "system_instruction": {
+    "parts": [{"text": "Bạn là một Kỹ sư Kiểm thử Hộp đen chuyên nghiệp. Dựa vào [ĐẶC TẢ NGHIỆP VỤ] được cung cấp, hãy trích xuất toàn bộ các kịch bản kiểm thử bao gồm luồng chính (happy path) và luồng ngoại lệ (edge cases). QUY TẮC NGHIÊM NGẶT: 1. KHÔNG được sinh ra bất kỳ dòng mã nguồn (code) nào. 2. CHỈ trả về dữ liệu tuân thủ tuyệt đối cấu trúc JSON được yêu cầu. Không kèm văn bản giải thích."}]
+  },
+  "contents": [{
+    "parts": [{"text": ""}]
+  }],
+  "generationConfig": {
+    "maxOutputTokens": 8192,
+    "temperature": 0.2,
+    "responseMimeType": "application/json",
+    "responseSchema": {
+      "type": "OBJECT",
+      "properties": {
+        "test_scenarios": {
+          "type": "ARRAY",
+          "items": {
+            "type": "OBJECT",
+            "properties": {
+              "scenario_name": { "type": "STRING", "description": "Tên kịch bản" },
+              "input_data": { "type": "STRING", "description": "Dữ liệu đầu vào" },
+              "expected_output": { "type": "STRING", "description": "Kết quả mong đợi" },
+              "flow_type": { "type": "STRING", "description": "Chỉ được chọn 1 trong 4 giá trị: 'Luồng chính', 'Ngoại lệ', 'Giá trị biên', 'Tổ hợp điều kiện chéo'" }
+            },
+            "required": ["scenario_name", "input_data", "expected_output", "flow_type"]
+          }
+        }
+      },
+      "required": ["test_scenarios"]
+    }
+  }
+}

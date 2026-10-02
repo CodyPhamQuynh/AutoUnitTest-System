@@ -1,0 +1,15 @@
+# Cấu hình IDE
+.idea/
+.vscode/
+
+# Thư mục build của Backend
+target/
+*.jar
+*.war
+
+# Thư mục build của Frontend
+node_modules/
+dist/
+
+# File nhạy cảm
+application.properties

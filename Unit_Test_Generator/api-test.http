@@ -1,0 +1,4 @@
+POST http://localhost:8081/api/test/generate-scenarios
+Content-Type: text/plain
+
+Chức năng đăng nhập, yêu cầu tài khoản và mật khẩu. Nếu sai mật khẩu thì báo 'Sai thông tin'.
