@@ -7,6 +7,8 @@ Hệ thống giúp tự động hóa quy trình viết JUnit Test cho ngôn ng�
 1. **Pha 1 (Chống Nịnh bợ):** Phân tích Đặc tả nghiệp vụ, kết hợp Prompt Engineering ép buộc LLM (Gemini) sinh Kịch bản kiểm thử chuẩn dạng JSON (Ground Truth). Người dùng kiểm duyệt ở Chốt chặn 1.
 2. **Pha 2 (Sinh Code & Chống Ảo tưởng):** Ghép mã nguồn Java với JSON đã duyệt, giới hạn AI chỉ sử dụng thư viện Mockito để sinh code JUnit.
 3. **Pha 3 (Thực thi & Đánh giá):** Chạy ngầm tiến trình (ProcessBuilder) để biên dịch và chạy `mvn test`. Đo lường độ phủ vật lý bằng **JaCoCo** và chấm điểm chất lượng tự động bằng **LLM Judge** theo 9 tiêu chí.
+![Giao diện hệ thống Pha 1](https://github.com/CodyPhamQuynh/AutoUnitTest-System/blob/main/images/demo_pha1.png?raw=true)
+![Kết quả](https://github.com/CodyPhamQuynh/AutoUnitTest-System/blob/main/images/demo_pha1_ketqua.png?raw=true)
 
 ## 🛠 Công nghệ sử dụng (Tech Stack)
 * **Backend:** Java 17, Spring Boot 3.x, Apache Maven, ProcessBuilder (CLI execution).
